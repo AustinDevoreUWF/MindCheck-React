@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'myFont';
+  src: url('/assets/font/Milky-Moringa.ttf') format('truetype');
+}
+:root{
+--base-color:#3705ff;
+--mainText-color: pink;
+--textShadow-color:#4f1b48;
+--page-background:#0f0e17;
+}
+.darkmode{
+  --base-color:#08021f;
+--mainText-color: rgb(255, 255, 255);
+--textShadow-color:#7c7c7c;
+--page-background:#000000;
+}
+
+
+/*page containers*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+main{
+  flex:1;
+}
+body {
+  background-color: var(--page-background);
+  font-family: 'myFont', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+   display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+/*heading postitioning*/
+#header {
+  position: relative;
+  background-color:var(--base-color);
+  padding: 80px 20px 10px;
+  color:var(--mainText-color);
+}
+#header img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: auto;
+}
+
+
+h1 {
+  font-size: 4rem;
+  text-shadow: var(--textShadow-color) 5px 5px 5px;
+  margin-top: -40px;
+  margin-left: 40px;
+}
+/*About and Home links*/
+label{
+font-size:8px;
+color:var(--mainText-color);
+}
+nav a {
+  color: var(--mainText-color);
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--mainText-color); 
+}
+/*General text*/
+#infoText {
+  color: var(--mainText-color);
+  text-shadow: var(--base-color) 2px 2px 2px;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 30px 0;
+  flex: 1 1 100%;
+}
+/*Images*/
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0px;
+  box-sizing: border-box;
+  width: 100%;
+}
+#userInput {
+  flex: 1 1 30%;
+  max-width: 30%;
+  height: auto;
+  margin-left:0;
+  border:5px solid var(--base-color);
+  border-radius: 5px;
+}
+
+#mainChart {
+  flex: 1 1 50%;
+  max-width: 50%;
+  height: auto;
+  margin-left: 0;
+  border:5px solid var(--base-color);
+    border-radius: 5px;
+/*Drop down menus*/
+}#drop-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30px;
+  width: 250px;
+}
+
+#drop-menu label {
+  text-align: center;
+
+  font-size: 18px;
+  color: var(--mainText-color);
+  margin-bottom: 4px;
+}
+
+#drop-menu select {
+  font-size: 1rem;
+  border: 5px solid var(--base-color);
+  border-radius: 5px;
+  background-color: var(--base-color);
+  text-align: center;
+  font-family: 'myFont', sans-serif;
+  color: var(--mainText-color);
+  text-shadow: var(--base-color) 2px 2px 2px;
+}
+/*Page end*/
+footer{
+  font-family: sans-serif;
+  font-size: 12px;;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1330px) {
+  .container {
+    flex-direction: column; /* switch to vertical layout on smaller screens */
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  #infoText {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .flex-row {
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #userInput,
+  #brain,
+  #mainChart {
+    max-width: 90%;
+  }
+ 
+
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* switch to vertical layout on tablets/smaller screens */
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  #infoText {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .flex-row {
+    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+
+
+  #userInput,
+  #brain,
+  #mainChart {
+    max-width: 90%;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {/*Adjusts for smallest screens*/
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  #infoText {
+    font-size: 0.9rem;
+  }
+}
