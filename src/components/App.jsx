@@ -9,7 +9,8 @@ function App() {
       return (
     <div className ='page-wrapper'>
       <Header />
-      <main className='main-content'>
+      <main className='content-wrapper'>
+        <div className='selector-wrapper'>
         <SliderBox />
             <DropdownMenus
              type='day'
@@ -19,6 +20,7 @@ function App() {
              type='week'
              options={[1,2,3,4]}
              />
+             </div>
           </main>
       <Footer />
     </div>
