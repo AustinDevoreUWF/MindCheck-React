@@ -1,25 +1,41 @@
 import { useState } from 'react'
-import reactLogo from '/assets/react.svg'
+import { useEffect } from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../firebase/firebase';
 import Header from '../components/header.jsx'
 import Footer from '../components/footer.jsx'
-import DropdownMenus from '../components/dropdown.jsx'
+import Chart1 from '../components/chart1.jsx'
 import SliderBox from './sliderBox.jsx'
-function App() {
+
+export default function App() {
+const [uid, setUid] = useState(null);
+  const [chartData, setChartData] = useState([]); 
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUid(user.uid);
+      }
+      setAuthChecked(true);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  if (!authChecked) {
+    return <div>Loading...</div>; // Or a spinner
+  }
 
       return (
     <div className ='page-wrapper'>
       <Header />
       <main className='content-wrapper'>
         <div className='selector-wrapper'>
-        <SliderBox />
-            <DropdownMenus
-             type='day'
-             options={['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']} 
-             />
-             <DropdownMenus
-             type='week'
-             options={[1,2,3,4]}
-             />
+        <SliderBox setChartData={setChartData} uid={uid} />
+             </div>
+             
+             <div className="graph-wrapper">
+              <Chart1 chartData={chartData} uid={uid} />
              </div>
           </main>
       <Footer />
@@ -27,4 +43,3 @@ function App() {
   );
 }
 
-export default App

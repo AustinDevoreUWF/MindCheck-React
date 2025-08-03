@@ -10,12 +10,6 @@
   --page-background: #0f0e17;
 }
 
-.darkmode {
-  --base-color: #08021f;
-  --mainText-color: white;
-  --textShadow-color: #7c7c7c;
-  --page-background: #000;
-}
 
 /* Reset & Base Styling */
 * {
@@ -117,45 +111,16 @@ nav a:hover {
 }
 
 label {
-  font-size: 8px;
+  font-size: 15px;
   color: var(--mainText-color);
 }
 
-/* Dropdown Menus */
-#drop-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-top: 30px;
-  width: 250px;
-}
-
-#drop-menu label {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 4px;
-}
-
-#drop-menu select {
-  font-size: 1rem;
-  border: 5px solid var(--base-color);
-  border-radius: 5px;
-  background-color: var(--base-color);
-  color: var(--mainText-color);
-  text-align: center;
-  font-family: 'myFont', sans-serif;
-  text-shadow: var(--base-color) 2px 2px 2px;
-}
 .slider-wrapper{
   display:flex;
   align-items:center;
-  color:#ffffff
+  color:#ffffff;
+  height:70px;
 }
-
-.slider-label{
-  font-size: 30px;
-}
-
 
 /* Footer */
 footer {
@@ -164,16 +129,29 @@ footer {
 }
 .content-wrapper{
   display:flex;
-  justify-content: flex-end;
+  justify-content:space-around;
   align-items:justify;
 }
 .selector-wrapper{
+  order:2;
   display:flex;
   flex-direction:column;
   justify-content: space-around;  
 }
+input[type='range']{
+  width: 200px;
+  height:30px;
+}
 
-
+.graph-wrap{
+  display:flex;
+  order:1;
+  justify-content: left;
+}
+.chartContainer{
+  width:100%;
+  max-width: 1000px;
+}
 
 /* Media Queries - Mobile Responsive */
 @media screen and (max-width: 1330px),
@@ -208,5 +186,37 @@ footer {
   #infoText {
     font-size: 0.9rem;
     max-width: 90%;
+  }
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1450px) {
+  .content-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .selector-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 1200px) {
+  .graph-wrapper {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 960px) {
+  .graph-wrapper {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 720px) {
+  .graph-wrapper {
+    transform: scale(0.4);
   }
 }
