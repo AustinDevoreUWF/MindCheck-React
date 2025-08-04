@@ -230,8 +230,8 @@ export default function Chart1() {
         marginBottom: '15px', 
         textAlign: 'center'
       }}>
-        <h3 style={{color: 'pink', margin: '0 0 5px 0'}}>Weekly Progress Chart</h3>
-        <div style={{ color: 'pink', fontSize: '14px',}}>
+        <h3 style={{color: 'pink', margin: '0 0 5px 0', textShadow: '1px 3px 4px #000000'}}>Weekly Progress Chart</h3>
+        <div style={{ color: 'pink', fontSize: '14px',textShadow: '1px 3px 4px #000000'}}>
           Categories: {sliderKeys.join(', ')} | Data points: {chartData.filter(d => Object.keys(d).length > 1).length}/7 days
         </div>
       </div>
@@ -243,8 +243,41 @@ export default function Chart1() {
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" stroke="pink" />
-        <YAxis stroke="pink" />
+       <XAxis 
+  dataKey="day"
+  stroke="pink"
+  tick={(props) => (
+    <text 
+      x={props.x} 
+      y={props.y + 10} 
+      textAnchor="middle" 
+      fill="pink" 
+      style={{ 
+        textShadow: '1px 3px 2px #000000',
+        fontSize: '16px',
+      }}
+    >
+      {props.payload.value}
+    </text>
+  )}
+/>
+        <YAxis
+  stroke="pink"
+  tick={(props) => (
+    <text 
+      x={props.x - 10} 
+      y={props.y + 4} 
+      textAnchor="end" 
+      fill="pink"
+      style={{ 
+        textShadow: '1px 3px 4px #000000',
+        fontSize: '14px',
+      }}
+    >
+      {props.payload.value}
+    </text>
+  )}
+/>
         <Tooltip />
         <Legend />
         {sliderKeys.map((key, index) => (

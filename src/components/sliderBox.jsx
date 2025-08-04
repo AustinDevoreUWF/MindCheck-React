@@ -250,14 +250,14 @@ export default function SliderBox() {
   };
 
   if (loading) {
-    return <div>Loading sliders...</div>;
+    return <div style={{color:'white'}}>Loading sliders...</div>;
   }
 
   if (submissionIndex >= daysOfWeek.length) {
     return (
       <div className="sliderBox">
-        <h3>Week Complete!</h3>
-        <p>You've logged data for all 7 days. Reset to start a new week.</p>
+        <h3 style={{color:'pink', fontSize:'24px', textShadow: '1px 3px 4px #000000'}}>Week Complete!</h3>
+        <p style={{color:'pink', textShadow: '1px 3px 4px #000000'}}>You've logged data for all 7 days. Reset to start a new week.</p>
         <button onClick={resetWeek}>Reset Week</button>
       </div>
     );
