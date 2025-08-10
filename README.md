@@ -10,3 +10,6 @@ This project is a very simple way to track your habbits one week at a time. It u
 
 ## Installation
 1. Clone the repo.
+2. npm install
+3. npm run
+    
