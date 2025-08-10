@@ -1,12 +1,12 @@
-MindCheck
+# MindCheck
+This project is a very simple way to track your habbits one week at a time. It uses Re-charts to graph the info as the user submits it via sliders that the user inputs each day based on the way they felt about the different aspects of their day. After the week is up the user will see which days had a lower score and will be able to hover over the graph seeing which specific aspect of their day likely caused the low score. Conversly tehy may see a high scoring day and want to replicate the aspects that likely led to a positive day!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- User input sliders
+- Re-Charts StackedBarChart
+- Anonymous User Auth
+- FireBase Storage/Fetch
+- Routing
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+1. Clone the repo.
